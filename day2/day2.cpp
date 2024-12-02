@@ -66,31 +66,23 @@ int Day2::countSafeReportsProblemDampener(std::vector<std::vector<int>> v)
 	{
 		bool safe = true;
 		
+		// copy vector and check
 		std::vector<int> w = v[i];
-		
-		//std::cout << "ORIGINAL: ";
-		//printVector(w);
-		
 		safe = vectorIsSafe(w);
 		
-		//std::cout << " --> " << (safe?"SAFE":"UNSAFE") << "\n";
-
+		// if unsafe, use "dampener" to remove one value and check again
 		if(!safe)
 		{
 			safe = true;
 			
-			for(size_t r = 0; r < v[i].size(); r++)
+			for(size_t r = 0; r < w.size(); r++)
 			{
-				std::vector<int> q = v[i];
+				// copy, remove one item and check
+				std::vector<int> q = w;
 				q.erase(q.begin() + r);
-				
-				//std::cout << "> " << r << " REMOVED: ";
-				//printVector(q);
-				
 				safe = vectorIsSafe(q);
 				
-				//std::cout << " --> " << (safe?"SAFE":"UNSAFE") << "\n";
-				
+				// only one has to be safe				
 				if(safe) break;
 			}
 		}
@@ -100,8 +92,6 @@ int Day2::countSafeReportsProblemDampener(std::vector<std::vector<int>> v)
 			count++;
 		}
 	}
-	
-	//std::cout << "count [" << count << "]\n";
 	
 	return count;
 }

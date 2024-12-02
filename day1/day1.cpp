@@ -17,8 +17,6 @@ int Day1::calculateDistance(std::vector<int> list_1, std::vector<int> list_2)
 	{
 		int dist = abs(list_1[i]-list_2[i]);
 		
-		//std::cout << i << ": [" << list_1[i] << "] [" << list_2[i] << "] [" << dist << "]\n";
-		
 		sum += dist;
 	}	
 				
@@ -37,8 +35,6 @@ int Day1::calculateSimilarityScore(std::vector<int> list_1, std::vector<int> lis
 		int occurances;
 		int similarity_score;
 		
-		//std::cout << "[" << number << "] --> ";
-		
 		// check if "key" exists
 		if(occurances_map.find(number) == occurances_map.end())
 		{
@@ -51,20 +47,14 @@ int Day1::calculateSimilarityScore(std::vector<int> list_1, std::vector<int> lis
 			
 		// get occurances
 		occurances = occurances_map[number];
-			
-		//std::cout << "occurances [" << occurances << "] --> ";
-		
+
 		// make score
 		similarity_score = number * occurances;
 		
-		//std::cout << "similarity_score [" << similarity_score << "]\n";
-		
-		// make sum
+		// sum
 		sum += similarity_score;
 	}
-	
-	//std::cout << "sum [" << sum << "]\n";
-	
+		
 	return sum;
 }
 
