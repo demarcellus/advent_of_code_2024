@@ -1,69 +1,12 @@
+#include "day1.hpp"
+
 #include <iostream>
-#include <vector>
+
 #include <map>
 #include <algorithm>
 #include <fstream>
 
-/**
- * FUNCTION PROTOTYPES
- */
-int day1_calculateDistance(std::vector<int> list_1, std::vector<int> list_2);
-int day1_calculateSimilarityScore(std::vector<int> list_1, std::vector<int> list_2);
-
-bool day1_readInputLists(std::vector<int> * list_1, std::vector<int> * list_2);
-
-bool day1_calculateDistance_test();
-bool day1_calculateSimilarityScore_test();
-
-/**
- * MAIN
- */
-int main()
-{
-	bool ok = true;
-	
-	// RUN TESTS
-	std::cout << "TESTS:\n";
-	if(ok) ok = day1_calculateDistance_test();
-	if(ok) ok = day1_calculateSimilarityScore_test();
-
-	if(!ok) return -1;
-
-	// GET DATA
-	std::cout << "\n";
-	std::cout << "INPUT DATA:\n";
-	
-	std::vector<int> v1, v2;
-	
-	day1_readInputLists(&v1, &v2);
-	
-	// print
-	for(size_t i = 0; i < 5; i++)
-	{
-		std::cout << i << ": [" << v1[i] << "][" << v2[i] << "]\n";
-	} 
-	std::cout << "...\n";
-	std::cout << "total size [" << v1.size() << "]\n";
-
-	// GO
-	std::cout << "\n";
-	std::cout << "OUTPUT DATA:\n";
-	
-	int distance = day1_calculateDistance(v1, v2);
-
-	std::cout << ">>> DISTANCE: [" << distance << "]\n";
-
-	int similarity_score = day1_calculateSimilarityScore(v1, v2);
-	
-	std::cout << ">>> SIMILARITY SCORE: [" << similarity_score << "]\n";
-
-	return 0;
-}
-
-/**
- * FUNCTIONS
- */
-int day1_calculateDistance(std::vector<int> list_1, std::vector<int> list_2)
+int Day1::calculateDistance(std::vector<int> list_1, std::vector<int> list_2)
 {
 	std::sort(list_1.begin(), list_1.end());
 	std::sort(list_2.begin(), list_2.end());
@@ -82,7 +25,7 @@ int day1_calculateDistance(std::vector<int> list_1, std::vector<int> list_2)
 	return sum;
 }
 
-int day1_calculateSimilarityScore(std::vector<int> list_1, std::vector<int> list_2)
+int Day1::calculateSimilarityScore(std::vector<int> list_1, std::vector<int> list_2)
 {
 	std::map<int, int> occurances_map;
 	
@@ -125,12 +68,45 @@ int day1_calculateSimilarityScore(std::vector<int> list_1, std::vector<int> list
 	return sum;
 }
 
+bool Day1::run()
+{
+	// GET DATA
+	std::cout << "\n";
+	std::cout << "INPUT DATA:\n";
+	
+	std::vector<int> v1, v2;
+	
+	readInput(&v1, &v2);
+	
+	// print
+	for(size_t i = 0; i < 5; i++)
+	{
+		std::cout << i << ": [" << v1[i] << "][" << v2[i] << "]\n";
+	} 
+	std::cout << "...\n";
+	std::cout << "total size [" << v1.size() << "]\n";
+
+	// GO
+	std::cout << "\n";
+	std::cout << "OUTPUT DATA:\n";
+	
+	int distance = calculateDistance(v1, v2);
+
+	std::cout << ">>> DISTANCE: [" << distance << "]\n";
+
+	int similarity_score = calculateSimilarityScore(v1, v2);
+	
+	std::cout << ">>> SIMILARITY SCORE: [" << similarity_score << "]\n";
+	
+	return true;
+}
+
 /**
  * INPUT
  */
-bool day1_readInputLists(std::vector<int> * list_1, std::vector<int> * list_2)
+bool Day1::readInput(std::vector<int> * list_1, std::vector<int> * list_2)
 {
-	std::ifstream infile("data/day1_lists.txt");
+	std::ifstream infile("data/day1.txt");
 	
 	list_1->clear();
 	list_2->clear();
@@ -148,12 +124,12 @@ bool day1_readInputLists(std::vector<int> * list_1, std::vector<int> * list_2)
 /**
  * TESTS 
  */
-bool day1_calculateDistance_test()
+bool Day1::calculateDistance_test()
 {
 	std::vector<int> v1 = {3, 4, 2, 1, 3, 3};
 	std::vector<int> v2 = {4, 3, 5, 3, 9, 3};
 	
-	int output = day1_calculateDistance(v1, v2);
+	int output = calculateDistance(v1, v2);
 	
 	if(output == 11)
 	{
@@ -165,12 +141,12 @@ bool day1_calculateDistance_test()
 	return false;
 }
 
-bool day1_calculateSimilarityScore_test()
+bool Day1::calculateSimilarityScore_test()
 {
 	std::vector<int> v1 = {3, 4, 2, 1, 3, 3};
 	std::vector<int> v2 = {4, 3, 5, 3, 9, 3};
 	
-	int output = day1_calculateSimilarityScore(v1, v2);
+	int output = calculateSimilarityScore(v1, v2);
 	
 	if(output == 31)
 	{
