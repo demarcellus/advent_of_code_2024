@@ -42,6 +42,18 @@ bool Day2::run()
 	return true;
 }
 
+bool Day2::test()
+{
+	bool ok = true;
+	
+	std::cout << "TESTS:\n";
+	
+	if(ok) ok = countSafeReports_test();
+	
+	if(ok) ok = countSafeReportsProblemDampener_test();
+	
+	return ok;
+}
 
 int Day2::countSafeReports(std::vector<std::vector<int>> v)
 {

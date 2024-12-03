@@ -7,9 +7,9 @@ class Day2
 	public:
 
 		bool run();
+		bool test();
 
-		bool countSafeReports_test();
-		bool countSafeReportsProblemDampener_test();
+
 
 	private:
 	
@@ -20,4 +20,7 @@ class Day2
 
 		bool vectorIsSafe(std::vector<int> v);
 		void printVector(std::vector<int> v);
+		
+		bool countSafeReports_test();
+		bool countSafeReportsProblemDampener_test();
 };

@@ -3,6 +3,7 @@
 
 #include "day1/day1.hpp"
 #include "day2/day2.hpp"
+#include "day3/day3.hpp"
 
 /**
  * FUNCTION PROTOTYPES
@@ -25,9 +26,7 @@ int main()
 	std::cout << "<<< DAY 1 >>>\n";
 	
 	// RUN TESTS
-	std::cout << "TESTS:\n";
-	if(ok) ok = day1.calculateDistance_test();
-	if(ok) ok = day1.calculateSimilarityScore_test();
+	if(ok) ok = day1.test();
 
 	if(!ok) return -1;
 
@@ -40,14 +39,13 @@ int main()
 	/********
 	 * DAY2 *
 	 ********/
+	/*
 	Day2 day2;
 	
 	std::cout << "<<< DAY 2 >>>\n";
 	
 	// RUN TESTS
-	std::cout << "TESTS:\n";
-	if(ok) ok = day2.countSafeReports_test();
-	if(ok) ok = day2.countSafeReportsProblemDampener_test();
+	if(ok) ok = day2.test();
 	
 	if(!ok) return -1;
 	
@@ -55,9 +53,25 @@ int main()
 	if(ok) ok = day2.run();
 	
 	if(!ok) return -1;
+	*/
 	
+	/********
+	 * DAY3 *
+	 ********/
+	Day3 day3;
 	
+	std::cout << "<<< DAY 3 >>>\n";
 	
+	// RUN TESTS
+	if(ok) ok = day3.test();
+	
+	if(!ok) return -1;
+	
+	// ACTUAL PROGRAM
+	if(ok) ok = day3.run();
+	
+	if(!ok) return -1;
+		
 	
 	/********
 	 * DONE *

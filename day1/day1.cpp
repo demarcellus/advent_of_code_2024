@@ -91,6 +91,19 @@ bool Day1::run()
 	return true;
 }
 
+bool Day1::test()
+{
+	bool ok = true;
+	
+	std::cout << "TESTS:\n";
+	
+	if(ok) ok = calculateDistance_test();
+	
+	if(ok) ok = calculateSimilarityScore_test();
+	
+	return ok;
+}
+
 /**
  * INPUT
  */
