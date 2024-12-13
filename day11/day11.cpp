@@ -49,7 +49,6 @@ bool Day11::test()
     std::cout << "TESTS:\n";
     
 	if(ok) ok = countStonesAfterBlinking_test();
-	if(ok) ok = countStonesAfterBlinkingMapping_test();
 	if(ok) ok = countStonesAfterBlinkingRecursive_test();
 	
 	return ok;
@@ -121,17 +120,6 @@ long Day11::blinkRecursive(long stone, int iterations_left)
 	
 	return count;
 }
-
-void Day11::printMap(std::map<long, long>& map, std::string header)
-{
-	std::cout << "MAP [" << header << "]: [";
-	for (auto const& [stone, count] : map)
-	{
-		std::cout << "[" << stone << ":" << count << "]";
-	}
-	std::cout << "]\n";
-}
-
 
 void Day11::blink(std::vector<long>& arrangement)
 {
