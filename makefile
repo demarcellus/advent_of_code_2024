@@ -1,7 +1,7 @@
 appname := aoc_2024
 
 CXX := g++
-CXXFLAGS := -Wall -g
+CXXFLAGS := -Wall -g -Ofast
 
 srcfiles := $(shell find . -maxdepth 2 -name "*.cpp")
 objects  := $(patsubst %.cpp, %.o, $(srcfiles))
