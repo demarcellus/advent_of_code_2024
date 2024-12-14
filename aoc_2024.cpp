@@ -13,6 +13,7 @@
 #include "day10/day10.hpp"
 #include "day11/day11.hpp"
 #include "day12/day12.hpp"
+#include "day13/day13.hpp"
 
 /**
  * FUNCTION PROTOTYPES
@@ -238,6 +239,7 @@ int main()
 	/********
 	 * DAY12 *
 	 ********/
+	/*
 	Day12 day12;
 	
 	std::cout << "<<< DAY 12 >>>\n";
@@ -249,6 +251,24 @@ int main()
 	
 	// ACTUAL PROGRAM
 	if(ok) ok = day12.run();
+	
+	if(!ok) return -1;
+	*/
+	
+	/********
+	 * DAY13 *
+	 ********/
+	Day13 day13;
+	
+	std::cout << "<<< DAY 13 >>>\n";
+	
+	// RUN TESTS
+	if(ok) ok = day13.test();
+	
+	if(!ok) return -1;
+	
+	// ACTUAL PROGRAM
+	if(ok) ok = day13.run();
 	
 	if(!ok) return -1;
 	
