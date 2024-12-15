@@ -65,6 +65,8 @@ bool Day14::run()
 	long result = calculateSafetyFactor(robots, Bathroom(101, 103), 100);
 	std::cout << ">>> SAFETY FACTOR: [" << result << "]\n";
 	
+	readInput(&robots); // don't forget to restore your robots!
+	
 	int result2 = findEasterEgg(robots, Bathroom(101,103), 100000);
 	std::cout << ">>> EASTER EGG: [" << result2 << "]\n";
 				
