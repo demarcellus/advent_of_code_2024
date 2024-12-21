@@ -5,14 +5,18 @@
 class Object
 {
 	public:
-		enum Type { Robot, Box, Wall, Empty};
+		enum Type { Robot, Box, Box_Left, Box_Right, Wall, Empty};
 	
 		Type type;
 		int x;
 		int y;
 		
+		Object * coupled;
+		
 		Object(Type _type, int _x, int _y);
-		bool move(std::vector<Object *>& objects, char direction, int depth);
+		void move(std::vector<Object *>& objects, char direction, bool move_coupled, int depth);
+		
+		bool canMove(std::vector<Object *>& objects, char direction, bool move_coupled, int depth);
 };
 	
 class Day15
@@ -26,14 +30,16 @@ class Day15
 	
 		bool readInput(std::vector<std::vector<char>> * map, std::vector<char> * moves);
 
-		long sumBoxGpsCoordinates(std::vector<std::vector<char>> map, std::vector<char> moves);
-
+		long sumBoxGpsCoordinates(std::vector<std::vector<char>> map, std::vector<char> moves, bool second_warehouse);
 
 		void printObjects(std::vector<std::vector<char>>& map, std::vector<Object *>& objects, Object& robot);
 
+		void transform(std::vector<std::vector<char>>& map);
 
 		bool sumBoxGpsCoordinates_small_test();
 		bool sumBoxGpsCoordinates_large_test();
+		bool sumBoxGpsCoordinates_second_small_test();
+		bool sumBoxGpsCoordinates_second_large_test();
 
 		
 };
