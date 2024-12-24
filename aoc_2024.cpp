@@ -1,23 +1,24 @@
 #include <iostream>
 
 
-#include "day1/day1.hpp"
-#include "day2/day2.hpp"
-#include "day3/day3.hpp"
-#include "day4/day4.hpp"
-#include "day5/day5.hpp"
-#include "day6/day6.hpp"
-#include "day7/day7.hpp"
-#include "day8/day8.hpp"
-#include "day9/day9.hpp"
-#include "day10/day10.hpp"
-#include "day11/day11.hpp"
-#include "day12/day12.hpp"
-#include "day13/day13.hpp"
-#include "day14/day14.hpp"
-#include "day15/day15.hpp"
-#include "day16/day16.hpp"
-#include "day17/day17.hpp"
+//#include "day1/day1.hpp"
+//#include "day2/day2.hpp"
+//#include "day3/day3.hpp"
+//#include "day4/day4.hpp"
+//#include "day5/day5.hpp"
+//#include "day6/day6.hpp"
+//#include "day7/day7.hpp"
+//#include "day8/day8.hpp"
+//#include "day9/day9.hpp"
+//#include "day10/day10.hpp"
+//#include "day11/day11.hpp"
+//#include "day12/day12.hpp"
+//#include "day13/day13.hpp"
+//#include "day14/day14.hpp"
+//#include "day15/day15.hpp"
+//#include "day16/day16.hpp"
+//#include "day17/day17.hpp"
+#include "day18/day18.hpp"
 
 /**
  * FUNCTION PROTOTYPES
@@ -338,6 +339,7 @@ int main()
 	/*********
 	 * DAY17 *
 	 *********/
+	/*
 	Day17 day17;
 	
 	std::cout << "<<< DAY 17 >>>\n";
@@ -351,6 +353,25 @@ int main()
 	if(ok) ok = day17.run();
 	
 	if(!ok) return -1;
+	*/	
+		
+	/*********
+	 * DAY18 *
+	 *********/
+	Day18 day18;
+	
+	std::cout << "<<< DAY 18 >>>\n";
+	
+	// RUN TESTS
+	if(ok) ok = day18.test();
+	
+	if(!ok) return -1;
+	
+	// ACTUAL PROGRAM
+	if(ok) ok = day18.run();
+	
+	if(!ok) return -1;
+	
 	
 	/********
 	 * DONE *
