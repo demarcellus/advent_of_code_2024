@@ -20,7 +20,8 @@
 //#include "day17/day17.hpp"
 //#include "day18/day18.hpp"
 //#include "day19/day19.hpp"
-#include "day20/day20.hpp"
+//#include "day20/day20.hpp"
+#include "day21/day21.hpp"
 
 /**
  * FUNCTION PROTOTYPES
@@ -398,6 +399,7 @@ int main()
 	/*********
 	 * DAY20 *
 	 *********/
+	/*
 	Day20 day20;
 	
 	std::cout << "<<< DAY 20 >>>\n";
@@ -411,7 +413,24 @@ int main()
 	if(ok) ok = day20.run();
 	
 	if(!ok) return -1;
+	*/
 	
+	/*********
+	 * DAY21 *
+	 *********/
+	Day21 day21;
+	
+	std::cout << "<<< DAY 21 >>>\n";
+	
+	// RUN TESTS
+	if(ok) ok = day21.test();
+	
+	if(!ok) return -1;
+	
+	// ACTUAL PROGRAM
+	if(ok) ok = day21.run();
+	
+	if(!ok) return -1;
 	
 	/********
 	 * DONE *

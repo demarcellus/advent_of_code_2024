@@ -15,16 +15,6 @@
 
 #include <climits>
 
-struct Comparator
-{
-	bool operator()(const std::pair<std::pair<unsigned int, unsigned int>, int>& item_1, const std::pair<std::pair<unsigned int, unsigned int>, int>& item_2) const 
-	{
-		return item_1.second < item_2.second;   // second = movement cost up and including point
-	}
-};
-
-
-
 bool Day20::run()
 {
     // GET DATA
